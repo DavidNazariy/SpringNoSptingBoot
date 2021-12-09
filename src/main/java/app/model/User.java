@@ -35,7 +35,7 @@ public class User implements Serializable {
     private String email;
 
     @Column(name = "user_role")
-    private String role;
+    private String user_role;
 
     public User(Long id, String firstName, String middleName,
                 String lastName, Date dob, String password,
@@ -48,7 +48,7 @@ public class User implements Serializable {
         this.password = password;
         this.date_of_registration = date_of_registration;
         this.email = email;
-        this.role = role;
+        this.user_role = role;
     }
 
     public User() {
