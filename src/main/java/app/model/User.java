@@ -10,43 +10,25 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    @Column(name = "id", nullable = false)
     private Long id;
-
-    @Column(name = "first_name")
     private  String firstName;
-
-    @Column(name = "middle_name")
     private  String middleName;
-
-    @Column(name = "last_name")
     private  String lastName;
-
-    @Column(name = "date_of_birth")
-    private Date dob;
-
-    @Column(name = "user_password")
-    private String password;
-
-    @Column(name = "date_of_registration")
-    private Date date_of_registration;
-
-    @Column(name = "email")
+    private Date dateOfBirthday;
+    private Date dateRegistration;
     private String email;
+    private String password;
+    private String role;
 
-    @Column(name = "user_role")
-    private String user_role;
-
-    public User(Long id, String firstName, String middleName,
-                String lastName, Date dob, String password,
-                Date date_of_registration, String email, String role) {
+    public User(Long id, String firstName, String middleName, String lastName, Date dateOfBirthday, Date dateRegistration, String email, String password, String role) {
         this.id = id;
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
-        this.dob = dob;
-        this.password = password;
-        this.date_of_registration = date_of_registration;
+        this.dateOfBirthday = dateOfBirthday;
+        this.dateRegistration = dateRegistration;
         this.email = email;
-        this.user_role = role;
+        this.password = password;
+        this.role = role;
     }
 
     public User() {
@@ -69,6 +51,14 @@ public class User implements Serializable {
         this.firstName = firstName;
     }
 
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
     public String getLastName() {
         return lastName;
     }
@@ -77,12 +67,58 @@ public class User implements Serializable {
         this.lastName = lastName;
     }
 
+    public Date getDateOfBirthday() {
+        return dateOfBirthday;
+    }
+
+    public void setDateOfBirthday(Date dateOfBirthday) {
+        this.dateOfBirthday = dateOfBirthday;
+    }
+
+    public Date getDateRegistration() {
+        return dateRegistration;
+    }
+
+    public void setDateRegistration(Date dateRegistration) {
+        this.dateRegistration = dateRegistration;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
+                ", middleName='" + middleName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", dateOfBirthday=" + dateOfBirthday +
+                ", dateRegistration=" + dateRegistration +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 }
