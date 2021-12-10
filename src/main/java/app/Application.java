@@ -22,15 +22,15 @@ public class Application {
 
         SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
         dataSource.setDriver(new com.mysql.cj.jdbc.Driver());
-        dataSource.setUrl("jdbc:mysql://localhost:3306/team4");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/team4soft");
         dataSource.setUsername("root");
-        dataSource.setPassword("JavaClub!!!");
+        dataSource.setPassword("root");
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
         //insert
         String sqlInsert = "INSERT INTO user (id,first_name, last_name)"
-                + " VALUES (3,'david','krupka')";
+                + " VALUES (1,'david','krupka')";
 
 
         jdbcTemplate.update(sqlInsert);
